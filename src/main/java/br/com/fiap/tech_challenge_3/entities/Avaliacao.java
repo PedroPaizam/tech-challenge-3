@@ -1,31 +1,58 @@
 package br.com.fiap.tech_challenge_3.entities;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
-import lombok.*;
-
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-
 public class Avaliacao {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Min(value = 1, message = "Nota mínima é 1")
-    @Max(value = 5, message = "Nota máxima é 5")
+    private Long restauranteId;
+    private String clienteNome;
+    private String comentario;
     private int nota;
 
-    private String comentario;
+    public Avaliacao(Long id, Long restauranteId, String clienteNome, String comentario, int nota) {
+        this.id = id;
+        this.restauranteId = restauranteId;
+        this.clienteNome = clienteNome;
+        this.comentario = comentario;
+        this.nota = nota;
+    }
 
-    @NotBlank(message = "Nome do usuário é obrigatório")
-    private String nomeUsuario;
+    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
 
-    @ManyToOne
-    @JoinColumn(name = "restaurante_id")
-    private Restaurante restaurante;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getRestauranteId() {
+        return restauranteId;
+    }
+
+    public void setRestauranteId(Long restauranteId) {
+        this.restauranteId = restauranteId;
+    }
+
+    public String getClienteNome() {
+        return clienteNome;
+    }
+
+    public void setClienteNome(String clienteNome) {
+        this.clienteNome = clienteNome;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
+    public int getNota() {
+        return nota;
+    }
+
+    public void setNota(int nota) {
+        this.nota = nota;
+    }
 }
-

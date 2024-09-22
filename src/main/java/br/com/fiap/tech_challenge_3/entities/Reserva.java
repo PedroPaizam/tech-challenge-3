@@ -1,35 +1,60 @@
 package br.com.fiap.tech_challenge_3.entities;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
-import lombok.*;
-
 import java.time.LocalDateTime;
 
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-
 public class Reserva {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @NotNull(message = "Data e hora são obrigatórios")
+    private Long restauranteId;
+    private String clienteNome;
     private LocalDateTime dataHora;
-
-    @Min(value = 1, message = "Número de pessoas deve ser no mínimo 1")
     private int numeroPessoas;
 
-    @NotBlank(message = "Nome do usuário é obrigatório")
-    private String nomeUsuario;
+    public Reserva(Long id, Long restauranteId, String clienteNome, LocalDateTime dataHora, int numeroPessoas) {
+        this.id = id;
+        this.restauranteId = restauranteId;
+        this.clienteNome = clienteNome;
+        this.dataHora = dataHora;
+        this.numeroPessoas = numeroPessoas;
+    }
 
-    @ManyToOne
-    @JoinColumn(name = "restaurante_id")
-    private Restaurante restaurante;
+    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
 
-    private String status; // Exemplo: "Pendente", "Confirmada", "Cancelada"
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getRestauranteId() {
+        return restauranteId;
+    }
+
+    public void setRestauranteId(Long restauranteId) {
+        this.restauranteId = restauranteId;
+    }
+
+    public String getClienteNome() {
+        return clienteNome;
+    }
+
+    public void setClienteNome(String clienteNome) {
+        this.clienteNome = clienteNome;
+    }
+
+    public LocalDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
+    }
+
+    public int getNumeroPessoas() {
+        return numeroPessoas;
+    }
+
+    public void setNumeroPessoas(int numeroPessoas) {
+        this.numeroPessoas = numeroPessoas;
+    }
 }
-
