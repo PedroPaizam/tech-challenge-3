@@ -11,6 +11,6 @@ public class RealizarReservaUseCase {
     }
 
     public void execute(Reserva reserva) {
-        reservaRepository.save(reserva);
+        reservaRepository.salvar(reserva);
     }
 }

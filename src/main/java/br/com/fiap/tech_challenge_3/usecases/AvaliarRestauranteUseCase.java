@@ -11,6 +11,6 @@ public class AvaliarRestauranteUseCase {
     }
 
     public void execute(Avaliacao avaliacao) {
-        avaliacaoRepository.save(avaliacao);
+        avaliacaoRepository.salvar(avaliacao);
     }
 }

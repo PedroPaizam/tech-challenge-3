@@ -1,15 +1,16 @@
 package br.com.fiap.tech_challenge_3.entities;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Reserva {
-    private Long id;
-    private Long restauranteId;
+    private UUID id;
+    private UUID restauranteId;
     private String clienteNome;
     private LocalDateTime dataHora;
     private int numeroPessoas;
 
-    public Reserva(Long id, Long restauranteId, String clienteNome, LocalDateTime dataHora, int numeroPessoas) {
+    public Reserva(UUID id, UUID restauranteId, String clienteNome, LocalDateTime dataHora, int numeroPessoas) {
         this.id = id;
         this.restauranteId = restauranteId;
         this.clienteNome = clienteNome;
@@ -18,19 +19,19 @@ public class Reserva {
     }
 
     // Getters e Setters
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
-    public Long getRestauranteId() {
+    public UUID getRestauranteId() {
         return restauranteId;
     }
 
-    public void setRestauranteId(Long restauranteId) {
+    public void setRestauranteId(UUID restauranteId) {
         this.restauranteId = restauranteId;
     }
 

@@ -11,6 +11,6 @@ public class CadastrarRestauranteUseCase {
     }
 
     public void execute(Restaurante restaurante) {
-        restauranteRepository.save(restaurante);
+        restauranteRepository.salvar(restaurante);
     }
 }

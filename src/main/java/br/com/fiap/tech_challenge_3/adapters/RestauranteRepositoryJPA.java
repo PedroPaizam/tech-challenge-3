@@ -5,7 +5,9 @@ import br.com.fiap.tech_challenge_3.repositories.RestauranteRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.UUID;
+
 @Repository
-public interface RestauranteRepositoryJPA extends JpaRepository<Restaurante, Long>, RestauranteRepository {
+public interface RestauranteRepositoryJPA extends JpaRepository<Restaurante, UUID>, RestauranteRepository {
     // Aqui você pode definir consultas customizadas, se necessário
 }

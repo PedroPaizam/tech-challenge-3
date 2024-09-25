@@ -1,13 +1,15 @@
 package br.com.fiap.tech_challenge_3.entities;
 
+import java.util.UUID;
+
 public class Restaurante {
-    private Long id;
+    private UUID id;
     private String nome;
     private String localizacao;
     private String tipoCozinha;
     private int capacidade;
 
-    public Restaurante(Long id, String nome, String localizacao, String tipoCozinha, int capacidade) {
+    public Restaurante(UUID id, String nome, String localizacao, String tipoCozinha, int capacidade) {
         this.id = id;
         this.nome = nome;
         this.localizacao = localizacao;
@@ -16,11 +18,11 @@ public class Restaurante {
     }
 
     // Getters e Setters
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

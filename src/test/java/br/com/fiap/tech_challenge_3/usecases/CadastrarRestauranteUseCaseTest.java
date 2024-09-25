@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.util.UUID;
+
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -22,10 +24,10 @@ public class CadastrarRestauranteUseCaseTest {
 
     @Test
     public void deveCadastrarRestauranteComSucesso() {
-        Restaurante restaurante = new Restaurante(1L, "Restaurante Exemplo", "São Paulo", "Italiana", 50);
+        Restaurante restaurante = new Restaurante(UUID.randomUUID(), "Restaurante Exemplo", "São Paulo", "Italiana", 50);
 
         cadastrarRestauranteUseCase.execute(restaurante);
 
-        verify(restauranteRepository, times(1)).save(restaurante);
+        verify(restauranteRepository, times(1)).salvar(restaurante);
     }
 }

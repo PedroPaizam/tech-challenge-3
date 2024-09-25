@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -24,10 +25,10 @@ public class RealizarReservaUseCaseTest {
 
     @Test
     public void deveRealizarReservaComSucesso() {
-        Reserva reserva = new Reserva(1L, 1L, "Cliente Exemplo", LocalDateTime.now(), 4);
+        Reserva reserva = new Reserva(UUID.randomUUID(), UUID.randomUUID(), "Cliente Exemplo", LocalDateTime.now(), 4);
 
         realizarReservaUseCase.execute(reserva);
 
-        verify(reservaRepository, times(1)).save(reserva);
+        verify(reservaRepository, times(1)).salvar(reserva);
     }
 }
