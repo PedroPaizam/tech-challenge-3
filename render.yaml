@@ -2,6 +2,7 @@ services:
   - type: web
     name: tech-challenge-3
     env: java
-    buildCommand: "mvn clean install"
+    buildCommand: "/mvn clean install"
     startCommand: "java -jar target/seu-arquivo.jar"
     plan: free
+
